@@ -1,5 +1,5 @@
 {% set name = "napari-molecule-reader" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-molecule-reader-{{ version }}.tar.gz
-  sha256: 2c878e2c23ed97ec0aeabe1b467329b7273d6e05e2a1c895d985d30fb85badaa
+  sha256: 16f09a43246b1a3923e9ab8e036a3b22d6347b22bc425c30791aa8ece2948854
 
 build:
   noarch: python
