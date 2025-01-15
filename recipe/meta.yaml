@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-molecule-reader-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-molecule-reader-{{ version }}.tar.gz
   sha256: 16f09a43246b1a3923e9ab8e036a3b22d6347b22bc425c30791aa8ece2948854
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - atomium
     - numpy
     - pandas
-    - python >=3.7
+    - python >={{ python_min }}
     - scipy
 
 test:
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/brisvag/napari-molecule-reader
